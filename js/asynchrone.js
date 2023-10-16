@@ -18,21 +18,21 @@ function Initialiser() {
         .addEventListener('click', GererTrierAvecTrieABulles);
 }
 
-function GererAttendre(event) {
+async function GererAttendre(event) {
     const temps = document.querySelector('#Attendre input').value;
 
-    Attendre(temps);
+    await Attendre(temps);
     console.log("Attente terminée.");
 }
 
-function GererGenererNbPremiers(event) {
+async function GererGenererNbPremiers(event) {
     const quantite = document.querySelector('#GenererNbPremiers input').value;
 
-    const premiers = GenererNbPremiers(quantite);
+    const premiers = await GenererNbPremiers(quantite);
     console.log(premiers);
 }
 
-function GererTrierAvecTrieABulles(event) {
+async function GererTrierAvecTrieABulles(event) {
     const nombreElements = document.querySelector(
         '#TrierAvecTrieABulles input'
     ).value;
@@ -43,6 +43,6 @@ function GererTrierAvecTrieABulles(event) {
         liste[i] = i;
     }
 
-    const listeTrie = TrierAvecTrieABulles(liste);
+    const listeTrie = await TrierAvecTrieABulles(liste);
     console.log(listeTrie);
 }
